@@ -5,7 +5,7 @@ pipeline {
     stages {
 	    stage('Setup') {
             steps {
-                git url:'http://10.250.10.2:8929/root/trivy.git', branch: 'project'
+                git url:'http://10.250.10.2:8929/root/trivy.git', branch: ' project'
             }
         }
         stage('Trivy') {
