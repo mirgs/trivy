@@ -5,12 +5,12 @@ pipeline {
     stages {
 	    stage('Setup') {
             steps {
-                git url:'http://10.250.10.2:8929/root/trivy.git', branch: 'master'
+                git url:'http://10.250.10.2:8929/root/trivy.git', branch: 'project'
             }
         }
         stage('Trivy') {
             steps {
-                sh 'trivy image --format json --output trivy-results.json debian:10.8'
+                sh 'trivy filesystem --format json --output trivy-result-proyect.json hello-nodejs-testing/'
             }
             post {
                 always {
